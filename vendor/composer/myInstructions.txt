@@ -1,0 +1,2 @@
+Ko dodamo nove php datoteke, da jih autoloader doda,
+moramo pognat ukaz "composer dump-autoload" v root app-a
