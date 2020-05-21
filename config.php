@@ -2,7 +2,7 @@
 
 return [
   'database' => [
-    'name' => 'laraveltutorial',
+    'name' => 'vaja1',
     'username' => 'root',
     'password' => '',
     'connection' => 'mysql:host=127.0.0.1',

@@ -13,7 +13,6 @@ class Session {
       session_regenerate_id(true);
     }
     $_SESSION['LAST_ACTIVITY'] = time();
-    var_dump($_SESSION['LAST_ACTIVITY']);
   }
 
 }

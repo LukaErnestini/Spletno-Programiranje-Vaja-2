@@ -12,6 +12,8 @@ class PagesController
 
   public function home()  // Static page, doesn't need own controller.
   {
+    
+
     return view('index');
   }
 
