@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class App
 {
   protected static $registry = []; //static, da lahko dostopamo iz static metod
