@@ -3,13 +3,41 @@
 class QueryBuilder {
 
   protected $pdo;
+  protected $mysqli;
 
-  public function __construct(PDO $pdo)
+  /* public function __construct(PDO $pdo)
   {
     $this->pdo = $pdo;
+  } */
+
+  public function __construct(mysqli $mysqli)
+  {
+    $this->mysqli = $mysqli;
+  }
+
+  public function executeCustomQuery($query)
+  {
+    return $this->mysqli->query($query);
   }
 
   public function selectAll($table)
+  {
+    
+  }
+
+  public function insert($table, $parameters)
+  {
+    
+  }
+
+  public function sanitizeString($dirtyString)
+  {
+    return mysqli_real_escape_string($this->mysqli, $dirtyString);
+  }
+
+
+
+  /* public function selectAll($table)
   {
     $statement = $this->pdo->prepare("select * from {$table}");
     $statement-> execute();
@@ -34,6 +62,6 @@ class QueryBuilder {
     } catch (PDOException $e) {
       die($e->getMessage());
     }
-  }
+  } */
 
 }
