@@ -3,7 +3,9 @@
 require 'vendor/autoload.php';
 require 'core/bootstrap.php';
 
-Router::load('routes.php') //chaining
+use App\Core\{Request, Router};
+
+Router::load('app/routes.php') //chaining
   ->direct(Request::uri(), Request::method());
 
 /* $router = Router::load('routes.php');

@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\App;
+
 App::bind('config', require 'config.php');
 
 App::bind('database', new QueryBuilder(
@@ -9,7 +11,7 @@ App::bind('database', new QueryBuilder(
 function view($name, $data = [])
 {
   extract($data); //iz array-a ustvari spremenljivke
-  return require "views/{$name}.view.php";
+  return require "app/views/{$name}.view.php";
 }
 
 function redirect($path)
