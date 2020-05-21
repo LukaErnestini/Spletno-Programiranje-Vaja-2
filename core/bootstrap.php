@@ -1,6 +1,8 @@
 <?php
 
-use App\Core\App;
+use App\Core\{App, Session};
+
+Session::start();
 
 App::bind('config', require 'config.php');
 
