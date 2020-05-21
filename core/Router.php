@@ -29,7 +29,7 @@ class Router {
       );
     }
 
-    throw new Exception('No route defined for this URI: ' . $uri);
+    throw new \Exception('No route defined for this URI: ' . $uri);
   }
 
   public function get($uri, $controller)
@@ -50,7 +50,7 @@ class Router {
     $controller = new $controller;
     
     if (!method_exists($controller, $action)) {
-      throw new Exception("{$controller} doesn't respond to the {$action} action.");
+      throw new \Exception("{$controller} doesn't respond to the {$action} action.");
     }
 
     return $controller->$action();
