@@ -15,7 +15,7 @@ class Oglas
     $query = "SELECT * FROM ads";
     if ($category != '*'){
       $seznamKategorij = Category::ustvariSeznamPodkategorij($category);
-      $query = $query . " INNER JOIN ads_categories ON ads.id=ads_categories.ads_id WHERE (ads_categories.categories_id='$kategorija'";
+      $query = $query . " INNER JOIN ads_categories ON ads.id=ads_categories.ads_id WHERE (ads_categories.categories_id='$category'";
       foreach ($seznamKategorij as $kat) //enkrat se duplicira kategorija pri poizvedbi, nič hudega
         $query = $query . " OR ads_categories.categories_id='$kat'";
       $query = $query . ')';		
@@ -77,5 +77,19 @@ class Oglas
     });
 
     return $oglasi;
+  }
+
+  public static function update($newTitle, $id, $newDescription)
+  {
+    $newDateExpiry = date('Y-m-d H:i:s', strtotime(
+      date('Y-m-d H:i:s') . ' + 30 days'
+    ));    
+    
+    $newTitle       = App::get('database')->sanitizeString($newTitle);
+    $newDescription = App::get('database')->sanitizeString($newDescription);
+
+    $query = "UPDATE `ads` SET `title` = '$newTitle', description = '$newDescription', `datum_zapadlosti` = '$newDateExpiry' WHERE id='$id'";
+    
+    App::get('database')->executeCustomQuery($query);
   }
 }
