@@ -30,8 +30,7 @@
 <?php
 //Izpiši oglase
 //Doda link z GET parametrom id na oglasi.php za gumb 'Preberi več'
-foreach($oglasi as $oglas)
-{
+foreach($oglasi as $oglas) :
 	//Izpišemo samo tiste oglase, ki so bili osveženi zadnjih trideset dni, če je checkbox ticked
 	$skrij = true;
 	if (isset($_GET['skrijZapadle']) && $_GET['skrijZapadle'] == 'Yes'){
@@ -67,6 +66,6 @@ foreach($oglasi as $oglas)
 
 <?php
   }
-}
+endforeach;
 
 require('partials/footer.php') ?>

@@ -1,6 +1,6 @@
 <?php require('partials/head.php') ?>
 
-<?php foreach($oglasi as $oglas){ ?>
+<?php foreach($oglasi as $oglas) : ?>
 
   <div class="container">
     <h4><?= $oglas->title; ?></h4>
@@ -18,6 +18,6 @@
     <hr/>
   </div>
 
-<?php } ?>
+<?php endforeach; ?>
 
 <?php require('partials/footer.php') ?>
