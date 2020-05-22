@@ -17,10 +17,11 @@ class QueryBuilder {
 
   public function executeCustomQuery($query)
   {
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     try {
       return $this->mysqli->query($query);
     } catch (mysqli_sql_exception $e) {
-      die(var_dump($e));
+      throw $e;
     }
   }
 
