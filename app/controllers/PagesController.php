@@ -25,7 +25,11 @@ class PagesController
       $searchQuery = $_GET['searchQuery'];
     }
 
-    $oglasi = Oglas::get_oglasi($kategorijaID, $searchQuery);    
+    $oglasi = Oglas::get_oglasi($kategorijaID, $searchQuery);
+
+    usort($oglasi, function($b, $a) {
+      return strtotime($a->datum_zapadlosti) - strtotime($b->datum_zapadlosti);
+    });
     
     return view('index', compact('kategorijaID','oglasi'));
   }
