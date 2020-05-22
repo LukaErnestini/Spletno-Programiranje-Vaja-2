@@ -9,6 +9,7 @@ $router->get('oglas', 'OglasController@show');
 $router->get('prijava', 'UporabnikController@prijava');
 $router->get('odjava', 'UporabnikController@odjava');
 $router->get('registracija', 'UporabnikController@registracija');
+$router->get('mojiOglasi', 'PagesController@mojiOglasi');
 
 
 $router->post('users', 'UsersController@store');

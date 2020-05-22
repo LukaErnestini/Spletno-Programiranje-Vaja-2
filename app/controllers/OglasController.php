@@ -20,8 +20,9 @@ class OglasController
       die("No ad selected to show.");
     }
 
-    $oglas = Oglas::get_oglas($oglasID);
+    $oglas = Oglas::get($oglasID);
 
     return view('oglas', compact('oglas', 'oglasID'));
   }
+
 }

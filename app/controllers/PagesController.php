@@ -1,6 +1,6 @@
 <?php
 
-// Controller tasks
+// Controller
 // Receive request.
 // Delegate.
 // Return response.
@@ -8,11 +8,12 @@
 namespace App\Controllers;
 
 use App\Models\Oglas;
+use App\Core\App;
 
 class PagesController
 {
 
-  public function home()  // Static page, doesn't need own controller.
+  public function home()
   {
     //filtriranje po kategoriji
     $kategorijaID = "*";
@@ -25,11 +26,7 @@ class PagesController
       $searchQuery = $_GET['searchQuery'];
     }
 
-    $oglasi = Oglas::get_oglasi($kategorijaID, $searchQuery);
-
-    usort($oglasi, function($b, $a) {
-      return strtotime($a->datum_zapadlosti) - strtotime($b->datum_zapadlosti);
-    });
+    $oglasi = Oglas::sort(Oglas::getAll($kategorijaID, $searchQuery));
     
     return view('index', compact('kategorijaID','oglasi'));
   }
@@ -47,6 +44,23 @@ class PagesController
   public function prijava()
   {
     return view('prijava');
+  }
+  
+  public function mojiOglasi()
+  {
+    // ce ni prijavljen ne pustimo na to stran sploh
+    if (!isset($_SESSION["USER_ID"])) {
+      return redirect('');
+    }
+
+    if(isset($_GET['deleteId']))
+	  {
+      Oglas::delete($_GET['deleteId']);
+    }
+    
+    $oglasi = Oglas::sort(Oglas::getByOwner($_SESSION["USER_ID"]));
+
+    return view('mojiOglasi', compact('oglasi'));
   }
 
 }

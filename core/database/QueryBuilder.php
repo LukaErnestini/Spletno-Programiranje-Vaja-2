@@ -17,7 +17,11 @@ class QueryBuilder {
 
   public function executeCustomQuery($query)
   {
-    return $this->mysqli->query($query);
+    try {
+      return $this->mysqli->query($query);
+    } catch (mysqli_sql_exception $e) {
+      die(var_dump($e));
+    }
   }
 
   public function selectAll($table)
