@@ -35,6 +35,11 @@ class QueryBuilder {
     return mysqli_real_escape_string($this->mysqli, $dirtyString);
   }
 
+  public function getMySqli()
+  {
+    return $this->mysqli;
+  }
+
 
 
   /* public function selectAll($table)
