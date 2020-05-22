@@ -7,20 +7,20 @@
 
       <?php	if(isset($_SESSION["USER_ID"])){ ?>
         <li class="nav-item">
-          <a class="nav-link" href="objavi.php">Objavi oglas</a>
+          <a class="nav-link" href="objavi">Objavi oglas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="odjava.php">Odjava</a>
+          <a class="nav-link" href="odjava">Odjava</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"href="mojiOglasi.php">Moji oglasi</a>
+          <a class="nav-link"href="mojiOglasi">Moji oglasi</a>
         </li>
       <?php } else{ ?>
         <li class="nav-item">
-          <a class="nav-link" href="prijava.php">Prijava</a>
+          <a class="nav-link" href="prijava">Prijava</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="registracija.php">Registracija</a>
+          <a class="nav-link" href="registracija">Registracija</a>
         </li>
       <?php	}	?>
 

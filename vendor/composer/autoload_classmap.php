@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Controllers\\OglasController' => $baseDir . '/app/controllers/OglasController.php',
     'App\\Controllers\\PagesController' => $baseDir . '/app/controllers/PagesController.php',
+    'App\\Controllers\\UporabnikController' => $baseDir . '/app/controllers/UporabnikController.php',
     'App\\Controllers\\UsersController' => $baseDir . '/app/controllers/UsersController.php',
     'App\\Core\\App' => $baseDir . '/core/App.php',
     'App\\Core\\Request' => $baseDir . '/core/Request.php',
@@ -16,6 +17,7 @@ return array(
     'App\\Models\\Category' => $baseDir . '/app/models/Category.php',
     'App\\Models\\Image' => $baseDir . '/app/models/Image.php',
     'App\\Models\\Oglas' => $baseDir . '/app/models/Oglas.php',
+    'App\\Models\\Uporabnik' => $baseDir . '/app/models/Uporabnik.php',
     'ComposerAutoloaderInit6597dfbe646b35d361311cca626950fc' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit6597dfbe646b35d361311cca626950fc' => $vendorDir . '/composer/autoload_static.php',

@@ -9,6 +9,7 @@ class ComposerStaticInit6597dfbe646b35d361311cca626950fc
     public static $classMap = array (
         'App\\Controllers\\OglasController' => __DIR__ . '/../..' . '/app/controllers/OglasController.php',
         'App\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/controllers/PagesController.php',
+        'App\\Controllers\\UporabnikController' => __DIR__ . '/../..' . '/app/controllers/UporabnikController.php',
         'App\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/controllers/UsersController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
@@ -17,6 +18,7 @@ class ComposerStaticInit6597dfbe646b35d361311cca626950fc
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/models/Category.php',
         'App\\Models\\Image' => __DIR__ . '/../..' . '/app/models/Image.php',
         'App\\Models\\Oglas' => __DIR__ . '/../..' . '/app/models/Oglas.php',
+        'App\\Models\\Uporabnik' => __DIR__ . '/../..' . '/app/models/Uporabnik.php',
         'ComposerAutoloaderInit6597dfbe646b35d361311cca626950fc' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit6597dfbe646b35d361311cca626950fc' => __DIR__ . '/..' . '/composer/autoload_static.php',

@@ -6,5 +6,9 @@ $router->get('contact', 'PagesController@contact');
 $router->get('users', 'UsersController@index');
 $router->get('prijava', 'PagesController@prijava');
 $router->get('oglas', 'OglasController@show');
+$router->get('prijava', 'UporabnikController@prijava');
+$router->get('odjava', 'UporabnikController@odjava');
+
 
 $router->post('users', 'UsersController@store');
+$router->post('prijava', 'UporabnikController@prijavi');
