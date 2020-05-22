@@ -22,10 +22,10 @@ class PagesController
 
     $searchQuery = "";
     if(isset($_GET["searchQuery"])) {
-      $kategorijaID = $_GET['searchQuery'];
+      $searchQuery = $_GET['searchQuery'];
     }
-    
-    $oglasi = Oglas::get_oglasi($kategorijaID, $searchQuery);
+
+    $oglasi = Oglas::get_oglasi($kategorijaID, $searchQuery);    
     
     return view('index', compact('kategorijaID','oglasi'));
   }
