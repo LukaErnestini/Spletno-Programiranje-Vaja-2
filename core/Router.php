@@ -29,7 +29,7 @@ class Router {
       );
     }
 
-    throw new \Exception('No route defined for this URI: ' . $uri);
+    throw new \Exception('Hey! >:( No route defined for this URI: ' . $uri);
   }
 
   public function get($uri, $controller)

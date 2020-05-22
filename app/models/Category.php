@@ -25,7 +25,7 @@ class Category
     }
   }
 
-  public function ustvariSeznamPodkategorij($rootKategorija)
+  public static function ustvariSeznamPodkategorij($rootKategorija)
   {
 
     $seznamPodkategorij = [];

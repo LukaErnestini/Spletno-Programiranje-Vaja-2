@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controllers\\OglasController' => $baseDir . '/app/controllers/OglasController.php',
     'App\\Controllers\\PagesController' => $baseDir . '/app/controllers/PagesController.php',
     'App\\Controllers\\UsersController' => $baseDir . '/app/controllers/UsersController.php',
     'App\\Core\\App' => $baseDir . '/core/App.php',
@@ -13,6 +14,7 @@ return array(
     'App\\Core\\Router' => $baseDir . '/core/Router.php',
     'App\\Core\\Session' => $baseDir . '/core/Session.php',
     'App\\Models\\Category' => $baseDir . '/app/models/Category.php',
+    'App\\Models\\Image' => $baseDir . '/app/models/Image.php',
     'App\\Models\\Oglas' => $baseDir . '/app/models/Oglas.php',
     'ComposerAutoloaderInit6597dfbe646b35d361311cca626950fc' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',

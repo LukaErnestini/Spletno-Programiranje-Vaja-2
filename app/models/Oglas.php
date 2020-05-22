@@ -31,4 +31,19 @@ class Oglas
       array_push($oglasi, $oglas);
     return $oglasi;
   }
+
+  //Funkcija izbere oglas s podanim ID-jem. Doda tudi uporabnika, ki je objavil oglas.
+  public static function get_oglas($id)
+  {
+    $id = App::get('database')->sanitizeString($id);
+    $query = "SELECT ads.*, users.username, users.mail FROM ads JOIN users ON users.id = ads.user_id WHERE ads.id = $id;";
+    $res = App::get('database')->executeCustomQuery($query);
+    if($oglas = $res->fetch_object()){
+      $stOgledov = $oglas->oglediCount + 1; // pristejemo en ogled oglasa.
+      $query = "UPDATE `ads` SET `oglediCount` = $stOgledov WHERE `ads`.`id` = $id;";
+      App::get('database')->executeCustomQuery($query);
+      return $oglas;
+    }
+    return null;
+  }
 }

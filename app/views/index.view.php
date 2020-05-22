@@ -50,11 +50,13 @@ foreach($oglasi as $oglas)
     <div class="container">
 			<div class="col-3">	
 				<h4>
-					<a href="oglas.php?id=<?= $oglas->id;?>"><?= $oglas->title; ?></a>
+					<a href="oglas?id=<?= $oglas->id;?>"><?= $oglas->title; ?></a>
 				</h4>
-				<a href="oglas.php?id=<?= $oglas->id;?>">
+
+				<a href="oglas?id=<?= $oglas->id;?>">
 				  <img src="data:image/jpg;base64, <?= $img_data;?>" class="img-fluid" alt="slika oglasa" />	
 				</a>
+				
 				<p>
 					<?= $oglas->datum_oddaje?>
 					<br />
