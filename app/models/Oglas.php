@@ -92,4 +92,29 @@ class Oglas
     
     App::get('database')->executeCustomQuery($query);
   }
+
+  public static function insert($title, $desc, $img)
+  {
+    $title = App::get('database')->sanitizeString($title);
+    $desc = App::get('database')->sanitizeString($desc);
+    $user_id = $_SESSION["USER_ID"];
+    $date = date('Y-m-d H:i:s');
+    $dateExpiry = date('Y-m-d H:i:s', strtotime($date. ' + 30 days'));
+
+    //Preberemo vsebino (byte array) slike
+    $img_file = file_get_contents($img["tmp_name"]);
+    //Pripravimo byte array za pisanje v bazo (v polje tipa LONGBLOB)
+    $img_file = App::get('database')->sanitizeString($img_file);
+    
+    $query = "INSERT INTO `ads` (`title`, `description`, `user_id`, `image`, `datum_oddaje`, `datum_zapadlosti`)
+          VALUES('{$title}', '{$desc}', '{$user_id}', '{$img_file}', '{$date}', '{$dateExpiry}');";
+    App::get('database')->executeCustomQuery($query);
+  }
+
+  public static function last()
+  {
+    //poizvedba, za dobit zadnji oglas dodan v podatkovno bazo
+    $query = "SELECT * FROM `ads` ORDER BY id DESC LIMIT 1;";
+    return App::get('database')->executeCustomQuery($query)->fetch_object();
+  }
 }

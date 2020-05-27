@@ -10,7 +10,7 @@ class Category
   protected $kategorija;
                       
   //generiranje drevesa za kategorije
-  public static function categoryTree($kategorija, $parent = 0, $sub_mark = '')
+  public static function categoryTree($kategorija = '*', $parent = 0, $sub_mark = '')
   {
 
     $query = App::get('database')->executeCustomQuery("SELECT * FROM categories WHERE parent = $parent ORDER BY name ASC");
@@ -79,5 +79,12 @@ class Category
     }
   
     return array_unique($seznamPodkategorij);
+  }
+
+  public static function assignToAd($catid, $oglasid)
+  {
+    //dodajamo povezave v tabelo mnogo mnogo (ads_categories)
+    $query = "INSERT INTO `ads_categories` (`categories_id`, `ads_id`) VALUES ($catid, $oglasid)";
+    App::get('database')->executeCustomQuery($query);
   }
 }

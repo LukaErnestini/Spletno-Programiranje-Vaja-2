@@ -11,9 +11,11 @@ $router->get('odjava', 'UporabnikController@odjava');
 $router->get('registracija', 'UporabnikController@registracija');
 $router->get('mojiOglasi', 'PagesController@mojiOglasi');
 $router->get('oglasEdit', 'OglasController@edit');
+$router->get('objavi', 'OglasController@objava');
 
 
 $router->post('users', 'UsersController@store');
 $router->post('prijava', 'UporabnikController@prijavi');
 $router->post('registracija', 'UporabnikController@registriraj');
-$router->post('oglasEdit', 'OglasController@submit');
+$router->post('oglasEdit', 'OglasController@submitEdit');
+$router->post('objavi', 'OglasController@store');

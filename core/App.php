@@ -19,5 +19,10 @@ class App
     
     return static::$registry[$key];
   }
+
+  public static function getKeys()
+  {
+    return array_keys(static::$registry);
+  }
 }
 

@@ -9,7 +9,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="row">
-				<?php \App\Models\Image::getImages($oglasID);?>
+				<?php \App\Models\Image::getAll($oglasID);?>
 			</div>
 		</div>
 	</div>
